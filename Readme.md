@@ -124,7 +124,7 @@ Pros
 
 Cons
 
-- We have to provide a token which is not the best to paste it in ou application and a very bad idea if it's stored publicly in our application's code as anyone could use it to impersonate you on Github.
+- We have to provide a token which is not the best to paste it in our application and a very bad idea if it's stored publicly in our code as anyone could use it to impersonate you on Github.
 - If you need only to read from Json files we can already do it using React as we did at step 1.
 
 
