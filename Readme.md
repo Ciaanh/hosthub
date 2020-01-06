@@ -1,6 +1,6 @@
 # What if… hosting sources, website and database on GitHub
 
-I like to explore ideas, most of the time it remains just an idea but sometimes I need to test it.
+I often have ideas, not always good ones and most of the time it remains just an idea but sometimes I need to test it.
 Recently I have been working on a small project (a World of Warcraft addon, I may talk about it when it's finished) and I found out that I needed to have a website to access a database and allow people help me to add simple data in it.
 The thing is I'm sometime quite lazy and for a little side project I don't want to setup a whole environment with a server and a database. So I asked myself "Why not all on github?" and here we are trying to find out if this is possible or just another crazy idea of mine.
 
@@ -21,10 +21,10 @@ You can find here the elements I added :
 [CSS file](https://gist.github.com/ciaanh/ed8a1d2347fd54a95922ceee5e2ecc41)
 [Sample json](https://gist.github.com/Ciaanh/9a018bba4f316babef3b04331578f570)
 
-And the changes to the previously generated App.js file :
+And the changes to the previously generated App.js file to use our new component:
 [https://gist.github.com/Ciaanh/48a357001b38d1a8f1f6747335b39fe4]
 
-To be sure everything work we can launch the website using `npm start` and push the application to GitHub.
+To be sure everything works we can launch the website using `npm start` and push the application to GitHub.
 
 ```
 git init
@@ -64,7 +64,7 @@ To make it work we just have to launch the deployment with the command:
 
 `npm run deploy`
 
-We now have a new branch `gh-pages` containing a compiled version of our website. We can visit the website specified in the "homepage" variable to check that everything is ok.
+We now have on Github a new branch `gh-pages` containing a compiled version of our website. We can visit the website specified in the "homepage" variable to check that everything is ok.
 
 ## Set up the database
 
@@ -85,7 +85,7 @@ We also need _atob_ and _btoa_ to handle base 64 encoding:
 
 `npm install atob btoa`
 
-Let's create a new branch _db_
+Let's create a new branch _"db"_
 
 `git checkout -b db`
 
@@ -98,9 +98,7 @@ git push --set-upstream origin db
 ```
 
 
-We add a GithubApi class to our application to handle the access to our new branch based on the [documentation of octokat.js](https://github.com/philschatz/octokat.js/#readwriteremove-a-file).
-
-We need only two functions, _get_ and _update_, to connect to the db but only the _update_ function require a valid Github token to save the modifications made.
+We add a GithubApi class to our application to handle the access to our new branch. Based on the [documentation of octokat.js](https://github.com/philschatz/octokat.js/#readwriteremove-a-file) we need only two functions, _get_ and _update_, to connect to the db but only the _update_ function require a valid Github token to save the changes.
 
 [https://gist.github.com/Ciaanh/b5c7f3b81a3a0a79973f4f33489e5c7e]
 
@@ -112,9 +110,9 @@ We add an input text field and a button to save the data using a valid Github to
 
 [https://gist.github.com/Ciaanh/d72ccbf9640740f015e493a23e728668][https://gist.github.com/ciaanh/e9ae382925abf818cf83e43e7863e5c9]
 
-And it's done, we can read and write from a json file on Github with a React application also hosted on Github.
+And it's done, we can read and write a json file on Github with a React application also hosted on Github.
 But now that we proved that it can be done we have to ask if it's a good solution or not.  
-I can only let you decide if this solution suits your needs but there is some things to consider here:
+I can only let you decide if this solution suits your needs but there are some things to consider here:
 
 Pros
 
