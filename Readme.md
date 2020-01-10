@@ -98,7 +98,9 @@ git push --set-upstream origin db
 ```
 
 
-We add a GitHubApi class to our application to handle the access to our new branch. Based on the [documentation of octokat.js](https://github.com/philschatz/octokat.js/#readwriteremove-a-file) we need only two functions, _get_ and _update_, to connect to the db but only the _update_ function require a valid GitHub token to save the changes.
+We add a GitHubApi class to our application to handle the access to our new branch. Based on the [documentation of octokat.js](https://github.com/philschatz/octokat.js/#readwriteremove-a-file) we need only two functions, _get_ and _update_.  
+The _get_ function reads the JSON file from the repository and parse it.  
+The _update_ function take use token to connect to the repository and save the changes with a commit.
 
 [https://gist.github.com/Ciaanh/b5c7f3b81a3a0a79973f4f33489e5c7e]
 
